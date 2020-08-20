@@ -12,6 +12,8 @@ struct ContentView: View {
     
     @Binding var dropPath: String
     
+    let airDropSorter = AirDropSorter()
+    
     var body: some View {
         VStack {
             Text("WhereToDrop")
@@ -23,7 +25,9 @@ struct ContentView: View {
                     Text("Select")
                 })
             }
-            Button(action: {}, label: {
+            Button(action: {
+                self.airDropSorter.start(path: "")
+            }, label: {
                 Text("Start Redirecting")
             })
             .padding(.bottom, 20)
