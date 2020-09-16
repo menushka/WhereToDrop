@@ -21,17 +21,23 @@ struct ContentView: View {
                 .padding(.bottom, 32)
             HStack(spacing: 0) {
                 TextField("Drop path", text: $dropPath)
-                Button(action: {}, label: {
+                Button(action: {
+                    self.airDropSorter.pickPath()
+                }, label: {
                     Text("Select")
                 })
             }
             Button(action: {
-                self.airDropSorter.start(path: "")
+                self.airDropSorter.start()
             }, label: {
+                Spacer()
                 Text("Start Redirecting")
+                Spacer()
             })
-            .padding(.bottom, 20)
-            Button(action: {}, label: {
+            .frame(maxWidth: .infinity)
+            Button(action: {
+                self.airDropSorter.stop()
+            }, label: {
                 Text("Stop Redirecting")
             })
         }

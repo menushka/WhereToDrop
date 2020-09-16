@@ -15,6 +15,10 @@
 		5C8CF03224ECCD3D00689C3F /* WhereToDropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8CF03124ECCD3D00689C3F /* WhereToDropUITests.swift */; };
 		5C8CF04024ECE89300689C3F /* AirDropSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8CF03F24ECE89300689C3F /* AirDropSorter.swift */; };
 		5C8CF04224ECECAC00689C3F /* AirDropSorter.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5C8CF04124ECECAC00689C3F /* AirDropSorter.scpt */; };
+		5CB3CBA324FC81FE005574BB /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3CBA224FC81FE005574BB /* String+Extensions.swift */; };
+		5CFD8CB624FB6AAD0064A271 /* AttachFolderActionScript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5CFD8CB424FB6AAD0064A271 /* AttachFolderActionScript.scpt */; };
+		5CFD8CB724FB6AAD0064A271 /* DetachFolderActionScript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 5CFD8CB524FB6AAD0064A271 /* DetachFolderActionScript.scpt */; };
+		5CFD8CB924FB6AE90064A271 /* HelperScripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD8CB824FB6AE90064A271 /* HelperScripts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,10 @@
 		5C8CF03324ECCD3D00689C3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C8CF03F24ECE89300689C3F /* AirDropSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDropSorter.swift; sourceTree = "<group>"; };
 		5C8CF04124ECECAC00689C3F /* AirDropSorter.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AirDropSorter.scpt; sourceTree = "<group>"; };
+		5CB3CBA224FC81FE005574BB /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		5CFD8CB424FB6AAD0064A271 /* AttachFolderActionScript.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AttachFolderActionScript.scpt; sourceTree = "<group>"; };
+		5CFD8CB524FB6AAD0064A271 /* DetachFolderActionScript.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DetachFolderActionScript.scpt; sourceTree = "<group>"; };
+		5CFD8CB824FB6AE90064A271 /* HelperScripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperScripts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,7 @@
 		5C8CF00F24ECCD3B00689C3F /* WhereToDrop */ = {
 			isa = PBXGroup;
 			children = (
+				5CFD8CB324FB69520064A271 /* Helper Scripts */,
 				5C8CF01024ECCD3B00689C3F /* AppDelegate.swift */,
 				5C8CF01224ECCD3B00689C3F /* ContentView.swift */,
 				5C8CF01424ECCD3D00689C3F /* Assets.xcassets */,
@@ -107,7 +116,8 @@
 				5C8CF01C24ECCD3D00689C3F /* Info.plist */,
 				5C8CF01D24ECCD3D00689C3F /* WhereToDrop.entitlements */,
 				5C8CF03F24ECE89300689C3F /* AirDropSorter.swift */,
-				5C8CF04124ECECAC00689C3F /* AirDropSorter.scpt */,
+				5CFD8CB824FB6AE90064A271 /* HelperScripts.swift */,
+				5CB3CBA224FC81FE005574BB /* String+Extensions.swift */,
 			);
 			path = WhereToDrop;
 			sourceTree = "<group>";
@@ -128,6 +138,16 @@
 				5C8CF03324ECCD3D00689C3F /* Info.plist */,
 			);
 			path = WhereToDropUITests;
+			sourceTree = "<group>";
+		};
+		5CFD8CB324FB69520064A271 /* Helper Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				5CFD8CB424FB6AAD0064A271 /* AttachFolderActionScript.scpt */,
+				5CFD8CB524FB6AAD0064A271 /* DetachFolderActionScript.scpt */,
+				5C8CF04124ECECAC00689C3F /* AirDropSorter.scpt */,
+			);
+			path = "Helper Scripts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C8CF01B24ECCD3D00689C3F /* Main.storyboard in Resources */,
+				5CFD8CB624FB6AAD0064A271 /* AttachFolderActionScript.scpt in Resources */,
 				5C8CF04224ECECAC00689C3F /* AirDropSorter.scpt in Resources */,
+				5CFD8CB724FB6AAD0064A271 /* DetachFolderActionScript.scpt in Resources */,
 				5C8CF01524ECCD3D00689C3F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +283,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CB3CBA324FC81FE005574BB /* String+Extensions.swift in Sources */,
+				5CFD8CB924FB6AE90064A271 /* HelperScripts.swift in Sources */,
 				5C8CF01324ECCD3B00689C3F /* ContentView.swift in Sources */,
 				5C8CF01124ECCD3B00689C3F /* AppDelegate.swift in Sources */,
 				5C8CF04024ECE89300689C3F /* AirDropSorter.swift in Sources */,
