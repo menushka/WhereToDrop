@@ -15,23 +15,6 @@ class AirDropSorter {
 
     private var currentPath: String?
 
-    func pickPath() {
-        let dialog = NSOpenPanel()
-        dialog.title = "Choose path to send AirDrop files to..."
-        dialog.showsHiddenFiles = true
-        dialog.allowsMultipleSelection = true
-        dialog.canChooseDirectories = true
-        dialog.canChooseFiles = false
-
-        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
-            let result = dialog.url
-            if (result != nil) {
-                let path = result!.path
-                currentPath = path
-            }
-        }
-    }
-
     func start() {
         guard let path = currentPath else { return }
 

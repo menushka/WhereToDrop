@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  WhereToDrop
 //
 //  Created by Menushka Weeratunga on 2020-08-18.
@@ -8,11 +8,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     
-    @Binding var dropPath: String
+    @ObservedObject var viewModel: MainViewModel
     
-    let airDropSorter = AirDropSorter()
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
@@ -20,15 +22,15 @@ struct ContentView: View {
                 .font(Font.system(size: 20, weight: .black, design: .default))
                 .padding(.bottom, 32)
             HStack(spacing: 0) {
-                TextField("Drop path", text: $dropPath)
+                TextField("Drop path", text: $viewModel.savedRedirectPath)
                 Button(action: {
-                    self.airDropSorter.pickPath()
+                    self.viewModel.setRedirectPath()
                 }, label: {
                     Text("Select")
                 })
             }
             Button(action: {
-                self.airDropSorter.start()
+                self.viewModel.startRedirect()
             }, label: {
                 Spacer()
                 Text("Start Redirecting")
@@ -36,7 +38,7 @@ struct ContentView: View {
             })
             .frame(maxWidth: .infinity)
             Button(action: {
-                self.airDropSorter.stop()
+                self.viewModel.stopRedirect()
             }, label: {
                 Text("Stop Redirecting")
             })
@@ -47,9 +49,9 @@ struct ContentView: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(dropPath: .constant("dfsdf"))
+        MainView(viewModel: MainViewModel())
             .previewLayout(PreviewLayout.fixed(width: 200, height: 300))
     }
 }

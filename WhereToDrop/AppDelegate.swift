@@ -14,10 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
 
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView(dropPath: .constant(""))
+        let contentView = MainView(viewModel: MainViewModel())
 
         // Create the window and set the content view. 
         window = NSWindow(
@@ -33,7 +32,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
 }
 
