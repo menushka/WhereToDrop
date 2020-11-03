@@ -10,7 +10,7 @@ import Foundation
 class BashModel {
     private static let SORTER_TEMPLATE_SCRIPT_FILENAME = "AirDropSorter"
 
-    func copySorter(redirectPath: String) throws {
+    func copySorter() throws {
         let scriptPath = getScriptPathInFolderActionScripts()
         let applescript = AppleScript(bundleFileName: Self.SORTER_TEMPLATE_SCRIPT_FILENAME)
         guard let path = applescript.path else { throw BashModelError.pathNotFound }

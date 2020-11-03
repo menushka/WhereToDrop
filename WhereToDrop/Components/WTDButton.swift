@@ -21,7 +21,7 @@ struct WTDButton: View {
         .padding(.vertical, 4)
         .background(
             RoundedRectangle(cornerRadius: 4)
-                .fill(Color(.textBackgroundColor))
+                .fill(Color(.controlBackgroundColor))
                 .shadow(radius: 0.5, x: 0, y: 0.5)
         )
     }

@@ -45,11 +45,9 @@ struct WTDSpinner_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             WTDSpinner()
-                .previewLayout(PreviewLayout.fixed(width: 200, height: 200))
-                .environment(\.colorScheme, .light)
+                .modifier(PreviewMode(scheme: .light, width: 50, height: 50))
             WTDSpinner()
-                .previewLayout(PreviewLayout.fixed(width: 200, height: 200))
-                .environment(\.colorScheme, .dark)
+                .modifier(PreviewMode(scheme: .dark, width: 50, height: 50))
         }
     }
 }

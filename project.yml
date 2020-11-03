@@ -1,6 +1,10 @@
 name: WhereToDrop
 options:
   bundleIdPrefix: ca.menushka
+packages:
+  Yams:
+    url: https://github.com/jpsim/Yams
+    from: 4.0.0
 targets:
   WhereToDrop:
     type: application
@@ -16,6 +20,8 @@ targets:
         NSAppleEventsUsageDescription: Automation of creating and deleting folder action scripts
     entitlements:
       path: WhereToDrop/WhereToDrop.entitlements
+    dependencies:
+      - package: Yams
     sources:
       - WhereToDrop
     scheme:

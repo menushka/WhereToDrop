@@ -11,6 +11,9 @@ import SwiftUI
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    static var WIDTH: CGFloat = 400
+    static var HEIGHT: CGFloat = 400
 
     var window: NSWindow!
 
@@ -20,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Create the window and set the content view. 
         window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 200, height: 300),
+            contentRect: NSRect(x: 0, y: 0, width: Self.WIDTH, height: Self.HEIGHT),
             styleMask: [.titled, .closable, .miniaturizable],
             backing: .buffered, defer: false)
         window.center()
