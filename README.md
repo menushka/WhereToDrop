@@ -20,8 +20,9 @@
   <a href="#license">License</a>
 </p>
 
-<div align="center">
-  <img src="./public/preview.png" height="600">
+<div style="display: flex; justify-content: center; flex-wrap: wrap;" align="center">
+  <img src="./public/previewLight.png" height="500">
+  <img src="./public/previewDark.png" height="500">
 </div>
 
 ---
@@ -47,6 +48,10 @@ This software uses the following projects:
 - [Swift](https://www.swift.com/)
 - [Yams](https://github.com/jpsim/Yams)
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
