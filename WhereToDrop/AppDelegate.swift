@@ -11,18 +11,20 @@ import SwiftUI
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    static var WIDTH: CGFloat = 400
+    static var HEIGHT: CGFloat = 400
 
     var window: NSWindow!
 
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        let contentView = MainView(viewModel: MainViewModel())
 
         // Create the window and set the content view. 
         window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            contentRect: NSRect(x: 0, y: 0, width: Self.WIDTH, height: Self.HEIGHT),
+            styleMask: [.titled, .closable, .miniaturizable],
             backing: .buffered, defer: false)
         window.center()
         window.setFrameAutosaveName("Main Window")
@@ -33,7 +35,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
 }
 

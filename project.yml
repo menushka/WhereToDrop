@@ -1,0 +1,50 @@
+name: WhereToDrop
+options:
+  bundleIdPrefix: ca.menushka
+packages:
+  Yams:
+    url: https://github.com/jpsim/Yams
+    from: 4.0.0
+targets:
+  WhereToDrop:
+    type: application
+    platform: macOS
+    deploymentTarget: "10.15"
+    info:
+      path: WhereToDrop/Info.plist
+      properties:
+        LSApplicationCategoryType: public.app-category.productivity
+        NSHumanReadableCopyright: Copyright © 2020 Menushka Weeratunga. All rights reserved.
+        NSMainStoryboardFile: Main
+        NSPrincipalClass: NSApplication
+        NSAppleEventsUsageDescription: Automation of creating and deleting folder action scripts
+    entitlements:
+      path: WhereToDrop/WhereToDrop.entitlements
+    dependencies:
+      - package: Yams
+    sources:
+      - WhereToDrop
+    scheme:
+        testTargets:
+          - WhereToDropTests
+          - WhereToDropUITests
+  WhereToDropTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "10.15"
+    info:
+      path: WhereToDropTests/Info.plist
+    sources:
+      - WhereToDropTests
+    dependencies:
+      - target: WhereToDrop
+  WhereToDropUITests:
+    type: bundle.ui-testing
+    platform: macOS
+    deploymentTarget: "10.15"
+    info:
+      path: WhereToDropUITests/Info.plist
+    sources:
+      - WhereToDropUITests
+    dependencies:
+      - target: WhereToDrop
