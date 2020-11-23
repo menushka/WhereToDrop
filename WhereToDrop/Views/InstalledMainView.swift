@@ -21,11 +21,14 @@ struct InstalledMainView: View {
                     Text("Redirection path:")
                         .font(.system(size: 14))
                     VStack(spacing: 5) {
-                        PathBar(path: currentRedirectPath)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 18)
-//                        TextField("", text: .constant(currentRedirectPath))
-//                            .font(.system(size: 14))
+                        ZStack {
+                            PathBar(path: currentRedirectPath)
+                                .frame(maxWidth: .infinity)
+                                .padding(.all, 4)
+                        }
+                        .frame(height: 24)
+                        .background(Color(.textColor).opacity(0.1))
+                        .cornerRadius(4)
                         HStack(alignment: .top) {
                             Text("Path on your local computer to transfer AirDrop files to.")
                                 .font(.system(size: 10))
